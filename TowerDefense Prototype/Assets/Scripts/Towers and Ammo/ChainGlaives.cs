@@ -22,7 +22,7 @@ public class ChainGlaives : MonoBehaviour
 			isHit = true;
 			collision.GetComponent<Enemy00>().health = collision.GetComponent<Enemy00>().health - GlaiveDamage;
 			Instantiate(effect, transform.position, Quaternion.identity);
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		}
 		
 		if(isHit && collision.tag == "Enemy" && collision.transform == LightningTarget)
