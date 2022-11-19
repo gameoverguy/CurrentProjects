@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4199590010821529414}
   - component: {fileID: 5967683409339741181}
-  - component: {fileID: 6627453387023449271}
+  - component: {fileID: -241126288102851193}
   m_Layer: 0
   m_Name: Basic Ammo Tower
   m_TagString: Tower
@@ -201,7 +201,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6627453387023449271
+--- !u!114 &-241126288102851193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,13 +215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TD:
   - {fileID: 11400000, guid: 957af554ce1017b4790f773fdceaa78e, type: 2}
-  - {fileID: 11400000, guid: 953e784468ddd824484d96938c4b470c, type: 2}
-  - {fileID: 11400000, guid: 272e6f76aa9f4424d8c116a641e9ec9c, type: 2}
-  - {fileID: 11400000, guid: 41fac5c7697149144a53a5c837730881, type: 2}
-  - {fileID: 11400000, guid: 3a1df8949f5ac2b448f5e67f062c7441, type: 2}
   TowerWeaponSprite: {fileID: 2707029667052672893}
   TowerBaseSprite: {fileID: 4199590009839771991}
-  laser: {fileID: 0}
+  basicTurret: {fileID: 8609096401132524272}
   currentLevel: 0
   MaxLevel: 0
 --- !u!1 &5865023033724606877

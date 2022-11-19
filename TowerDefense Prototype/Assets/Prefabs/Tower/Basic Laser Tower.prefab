@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617130779834869826}
   - component: {fileID: 6919487810506347769}
-  - component: {fileID: 7579272626790620083}
+  - component: {fileID: -7903165470702422383}
   m_Layer: 0
   m_Name: Basic Laser Tower
   m_TagString: Tower
@@ -61,7 +61,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7579272626790620083
+--- !u!114 &-7903165470702422383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 617130779834869827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f8ef75a7000394d86639059a343787, type: 3}
+  m_Script: {fileID: 11500000, guid: a27919f78814f5841bbfe2cdc7d6667e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TD:

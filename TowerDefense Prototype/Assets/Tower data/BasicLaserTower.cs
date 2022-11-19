@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class BasicTower : MonoBehaviour {
+public class BasicLaserTower : MonoBehaviour {
 
 	public TowerData[] TD;
 
@@ -12,7 +12,7 @@ public class BasicTower : MonoBehaviour {
 	
 	public SpriteRenderer TowerBaseSprite;
 	
-	public BasicTurret basicTurret;
+	public BasicLaserWeapon laser;
 	
 	public int currentLevel;
 	public int MaxLevel;
@@ -35,8 +35,8 @@ public class BasicTower : MonoBehaviour {
 		TowerWeaponSprite.sprite = TD[currentLevel].TowerWeaponSprite;
 		TowerWeaponSprite.color = TD[currentLevel].TowerWeaponcolor;
 		
-		basicTurret.Range = TD[currentLevel].TowerRange;
-		basicTurret.startTimeBtwShots = TD[currentLevel].StartTimeBtwShots;
+		laser.Range = TD[currentLevel].TowerRange;
+		laser.startTimeBtwShots = TD[currentLevel].StartTimeBtwShots;
 	}
 
 }

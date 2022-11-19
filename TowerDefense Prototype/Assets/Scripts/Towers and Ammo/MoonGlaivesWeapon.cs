@@ -35,7 +35,9 @@ public class MoonGlaivesWeapon : MonoBehaviour
 			if(timeBtwShots <= 0)
 			{
 				tmpLightningPrefab = Instantiate(projectile, spawnPos.position, transform.rotation);
-				tmpLightningPrefab.GetComponent<ChainGlaives>().LightningTarget = Target.transform;
+			
+				tmpLightningPrefab.GetComponent<MoonGlaives>().LightningTarget = Target.transform;
+				
 				timeBtwShots = startTimeBtwShots;
 			}
 			else
