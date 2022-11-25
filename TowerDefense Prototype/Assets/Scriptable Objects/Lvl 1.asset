@@ -16,5 +16,5 @@ MonoBehaviour:
   TowerWeaponSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   TowerBasecolor: {r: 0, g: 1, b: 0.9899888, a: 1}
   TowerWeaponcolor: {r: 1, g: 0, b: 0.018795967, a: 1}
-  TowerRange: 6
-  StartTimeBtwShots: 0.3
+  TowerRange: 8
+  StartTimeBtwShots: 1
