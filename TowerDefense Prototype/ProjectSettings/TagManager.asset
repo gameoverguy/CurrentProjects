@@ -9,7 +9,8 @@ TagManager:
   - Empty
   - Base
   - Environment
-  - Tower
+  - tower
+  - path
   layers:
   - Default
   - TransparentFX
