@@ -4003,8 +4003,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicGuessData: {fileID: 11400000, guid: f02846763aa62fd4fb151cebb65e4a11, type: 2}
   LevelGuessData: {fileID: 11400000, guid: 7dd1c0e2ac74e804ca909f14399e6140, type: 2}
-  Level01guessdata: {fileID: 11400000, guid: 7dd1c0e2ac74e804ca909f14399e6140, type: 2}
-  Level02guessdata: {fileID: 11400000, guid: 93be67e4fc9a74149a5e0dfcbf974df1, type: 2}
   Level01Option:
   - {fileID: 2073792338}
   - {fileID: 1712579677}
@@ -4031,8 +4029,6 @@ MonoBehaviour:
   TransitionTime: 0
   CorrectAnswer: 00000000
   InCorrectAnswer: 00000000
-  Level01QAnswered: 0
-  Level02QAnswered: 0
   guesslogolevel:
   - {fileID: 11400000, guid: 4f6053473f7e30f4697b4c5084177a99, type: 2}
   - {fileID: 11400000, guid: 1881ff9275524184b829a2d71254e43f, type: 2}
@@ -4067,6 +4063,7 @@ MonoBehaviour:
     m_FadeDuration: 0
   Level01Q: 0
   Level02Q: 0
+  LevelQuestion: 0000000000000000
   level:
   - {fileID: 685696884}
   - {fileID: 158592846}
