@@ -8,10 +8,6 @@ using TMPro;
 
 public class GuessLogoLevel : ScriptableObject
 {
-	public TextMeshProUGUI[] OptionText;
-	public Button[] Option;
-	public Image GuessImage;
-	
 	public GuessData[] Question;
 	
 }

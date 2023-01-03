@@ -6,9 +6,9 @@ using TMPro;
 
 public class GuessDisplay : MonoBehaviour 
 {
-
-	public GuessData Level01guessdata;
-	public GuessData Level02guessdata;
+	public GuessData BasicGuessData;
+	public GuessData LevelGuessData;
+	
 	public Button[] Level01Option;
 	public Button[] Level02Option;
 	
@@ -18,25 +18,23 @@ public class GuessDisplay : MonoBehaviour
 	public Image Level01GuessImage;
 	public Image Level02GuessImage;
 	
-	
 	public float waittime;
 	public float TransitionTime;
 	public bool[] CorrectAnswer;
 	public bool[] InCorrectAnswer;
-	public bool Level01QAnswered;
-	public bool Level02QAnswered;
-	public GuessData[] Level01Question;
-	public GuessData[] Level02Question;
+
+
+	
+	public GuessLogoLevel[] guesslogolevel;
 
 	public ColorBlock[] cb;
-	public ColorBlock[] Level01cb;
-	public ColorBlock[] Level02cb;
 	
 	public int Level01Q;
 	public int Level02Q;
 	
 	public GameObject[] level;
 	public int Lvl;
+
 	
 
     // Use this for initialization
@@ -46,34 +44,20 @@ public class GuessDisplay : MonoBehaviour
 		Level01Q = 1;
 		Level02Q = 1;
 		Lvl = 1;
-		waittime = 2.0f;
+		waittime = 1.0f;
 		TransitionTime = 2.0f;
-		Level01QAnswered = false;
-		Level02QAnswered = false;
-		
-		Level01GuessImage.sprite = Level01guessdata.GuessImage;
-		
-		/*
-		for (int i = 0; i < Level01cb.Length; i++)
-		{
-			Level01OptionText[i].text = Level01guessdata.OptionText[i];
-			Level01cb[i] = Level01Option[i].colors;
-			Level01cb[i].selectedColor = Level01guessdata.Selected;
-			Level01cb[i].pressedColor = Level01guessdata.Selected;
-			Level01cb[i].normalColor = Level01guessdata.normal;
-			Level01cb[i].disabledColor = Level01guessdata.normal;
-			Level01Option[i].colors = Level01cb[i];
-		}
-		*/
+
+
+		Level01GuessImage.sprite = LevelGuessData.GuessImage;
 		
 		for (int i = 0; i < cb.Length; i++)
 		{
-			Level01OptionText[i].text = Level01guessdata.OptionText[i];
+			Level01OptionText[i].text = LevelGuessData.OptionText[i];
 			cb[i] = Level01Option[i].colors;
-			cb[i].selectedColor = Level01guessdata.Selected;
-			cb[i].pressedColor = Level01guessdata.Selected;
-			cb[i].normalColor = Level01guessdata.normal;
-			cb[i].disabledColor = Level01guessdata.normal;
+			cb[i].selectedColor = BasicGuessData.Selected;
+			cb[i].pressedColor = BasicGuessData.Selected;
+			cb[i].normalColor = BasicGuessData.normal;
+			cb[i].disabledColor = BasicGuessData.normal;
 			Level01Option[i].colors = cb[i];
 		}
 		
@@ -86,24 +70,14 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 1)
 		{
-			
-			cb[0].normalColor = Level01guessdata.Selected;
-			cb[0].selectedColor = Level01guessdata.Selected;
-			cb[0].disabledColor = Level01guessdata.Selected;
+			cb[0].normalColor = LevelGuessData.Selected;
+			cb[0].selectedColor = LevelGuessData.Selected;
+			cb[0].disabledColor = LevelGuessData.Selected;
 			Level01Option[0].colors = cb[0];
 			
-			/*
-			Level01cb[0].normalColor = Level01guessdata.Selected;
-			Level01cb[0].selectedColor = Level01guessdata.Selected;
-			Level01cb[0].disabledColor = Level01guessdata.Selected;
-			Level01Option[0].colors = Level01cb[0];
-			*/
-			
-			
 			TurnoffButtons();
-			Level01QAnswered = true;
-		
-			if(Level01guessdata.isAnswer[0])
+
+			if(LevelGuessData.isAnswer[0])
 			{
 				CorrectAnswer[0] = true;
 			}
@@ -116,24 +90,15 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 2)
 		{
-			cb[0] = Level02Option[0].colors;
-			cb[0].normalColor = Level02guessdata.Selected;
-			cb[0].selectedColor = Level02guessdata.Selected;
-			cb[0].disabledColor = Level02guessdata.Selected;
-			Level02Option[0].colors = cb[0];
-			
-			/*
-			Level02cb[0] = Level02Option[0].colors;
-			Level02cb[0].normalColor = Level02guessdata.Selected;
-			Level02cb[0].selectedColor = Level02guessdata.Selected;
-			Level02cb[0].disabledColor = Level02guessdata.Selected;
-			Level02Option[0].colors = Level02cb[0];
-			*/
+			cb[0] = Level01Option[0].colors;
+			cb[0].normalColor = LevelGuessData.Selected;
+			cb[0].selectedColor = LevelGuessData.Selected;
+			cb[0].disabledColor = LevelGuessData.Selected;
+			Level01Option[0].colors = cb[0];
 			
 			TurnoffButtons();
-			Level02QAnswered = true;
-		
-			if(Level02guessdata.isAnswer[0])
+
+			if(LevelGuessData.isAnswer[0])
 			{
 				CorrectAnswer[0] = true;
 			}
@@ -142,9 +107,6 @@ public class GuessDisplay : MonoBehaviour
 				InCorrectAnswer[0] = true;
 			}
 		}
-		
-		
-		
 		
 	}
 	
@@ -152,23 +114,15 @@ public class GuessDisplay : MonoBehaviour
 	{
 		if(Lvl == 1)
 		{
-			cb[1].normalColor = Level01guessdata.Selected;
-			cb[1].selectedColor = Level01guessdata.Selected;
-			cb[1].disabledColor = Level01guessdata.Selected;
+			cb[1].normalColor = LevelGuessData.Selected;
+			cb[1].selectedColor = LevelGuessData.Selected;
+			cb[1].disabledColor = LevelGuessData.Selected;
 			Level01Option[1].colors = cb[1];
 			
-			/*
-			Level01cb[1].normalColor = Level01guessdata.Selected;
-			Level01cb[1].selectedColor = Level01guessdata.Selected;
-			Level01cb[1].disabledColor = Level01guessdata.Selected;
-			Level01Option[1].colors = Level01cb[1];
-			*/
-			
-			
 			TurnoffButtons();
-			Level01QAnswered = true;
+
 		
-			if(Level01guessdata.isAnswer[1])
+			if(LevelGuessData.isAnswer[1])
 			{
 				CorrectAnswer[1] = true;
 			}
@@ -181,24 +135,16 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 2)
 		{
-			cb[1] = Level02Option[1].colors;
-			cb[1].normalColor = Level02guessdata.Selected;
-			cb[1].selectedColor = Level02guessdata.Selected;
-			cb[1].disabledColor = Level02guessdata.Selected;
-			Level02Option[1].colors = cb[1];
-			
-			/*
-			Level02cb[1] = Level02Option[1].colors;
-			Level02cb[1].normalColor = Level02guessdata.Selected;
-			Level02cb[1].selectedColor = Level02guessdata.Selected;
-			Level02cb[1].disabledColor = Level02guessdata.Selected;
-			Level02Option[1].colors = Level02cb[1];
-			*/
+			cb[1] = Level01Option[1].colors;
+			cb[1].normalColor = LevelGuessData.Selected;
+			cb[1].selectedColor = LevelGuessData.Selected;
+			cb[1].disabledColor = LevelGuessData.Selected;
+			Level01Option[1].colors = cb[1];
 			
 			TurnoffButtons();
-			Level02QAnswered = true;
+
 		
-			if(Level02guessdata.isAnswer[1])
+			if(LevelGuessData.isAnswer[1])
 			{
 				CorrectAnswer[1] = true;
 			}
@@ -208,9 +154,6 @@ public class GuessDisplay : MonoBehaviour
 			}
 		}
 		
-		
-		
-
 		
 	}
 	
@@ -220,23 +163,16 @@ public class GuessDisplay : MonoBehaviour
 		if(Lvl == 1)
 		{
 			
-			cb[2].normalColor = Level01guessdata.Selected;
-			cb[2].selectedColor = Level01guessdata.Selected;
-			cb[2].disabledColor = Level01guessdata.Selected;
+			cb[2].normalColor = LevelGuessData.Selected;
+			cb[2].selectedColor = LevelGuessData.Selected;
+			cb[2].disabledColor = LevelGuessData.Selected;
 			Level01Option[2].colors = cb[2];
-			
-			/*
-			Level01cb[2].normalColor = Level01guessdata.Selected;
-			Level01cb[2].selectedColor = Level01guessdata.Selected;
-			Level01cb[2].disabledColor = Level01guessdata.Selected;
-			Level01Option[2].colors = Level01cb[2];
-			*/
 			
 			
 			TurnoffButtons();
-			Level01QAnswered = true;
+
 		
-			if(Level01guessdata.isAnswer[2])
+			if(LevelGuessData.isAnswer[2])
 			{
 				CorrectAnswer[2] = true;
 			}
@@ -248,24 +184,17 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 2)
 		{
-			cb[2] = Level02Option[2].colors;
-			cb[2].normalColor = Level02guessdata.Selected;
-			cb[2].selectedColor = Level02guessdata.Selected;
-			cb[2].disabledColor = Level02guessdata.Selected;
-			Level02Option[2].colors = cb[2];
-			
-			/*
-			Level02cb[2] = Level02Option[2].colors;
-			Level02cb[2].normalColor = Level02guessdata.Selected;
-			Level02cb[2].selectedColor = Level02guessdata.Selected;
-			Level02cb[2].disabledColor = Level02guessdata.Selected;
-			Level02Option[2].colors = Level02cb[2];
-			*/
+			cb[2] = Level01Option[2].colors;
+			cb[2].normalColor = LevelGuessData.Selected;
+			cb[2].selectedColor = LevelGuessData.Selected;
+			cb[2].disabledColor = LevelGuessData.Selected;
+			Level01Option[2].colors = cb[2];
+
 			
 			TurnoffButtons();
-			Level02QAnswered = true;
+
 		
-			if(Level02guessdata.isAnswer[2])
+			if(LevelGuessData.isAnswer[2])
 			{
 				CorrectAnswer[2] = true;
 			}
@@ -285,22 +214,16 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 1)
 		{
-			cb[3].normalColor = Level01guessdata.Selected;
-			cb[3].selectedColor = Level01guessdata.Selected;
-			cb[3].disabledColor = Level01guessdata.Selected;
+			cb[3].normalColor = LevelGuessData.Selected;
+			cb[3].selectedColor = LevelGuessData.Selected;
+			cb[3].disabledColor = LevelGuessData.Selected;
 			Level01Option[3].colors = cb[3];
-			
-			/*
-			Level01cb[3].normalColor = Level01guessdata.Selected;
-			Level01cb[3].selectedColor = Level01guessdata.Selected;
-			Level01cb[3].disabledColor = Level01guessdata.Selected;
-			Level01Option[3].colors = Level01cb[3];
-			*/
+
 			
 			TurnoffButtons();
-			Level01QAnswered = true;
+
 		
-			if(Level01guessdata.isAnswer[3])
+			if(LevelGuessData.isAnswer[3])
 			{
 				CorrectAnswer[3] = true;
 			}
@@ -312,25 +235,17 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(Lvl == 2)
 		{
-			cb[3] = Level02Option[3].colors;
-			cb[3].normalColor = Level02guessdata.Selected;
-			cb[3].selectedColor = Level02guessdata.Selected;
-			cb[3].disabledColor = Level02guessdata.Selected;
-			Level02Option[3].colors = cb[3];
-			
-			/*
-			Level02cb[3] = Level02Option[3].colors;
-			Level02cb[3].normalColor = Level02guessdata.Selected;
-			Level02cb[3].selectedColor = Level02guessdata.Selected;
-			Level02cb[3].disabledColor = Level02guessdata.Selected;
-			Level02Option[3].colors = Level02cb[3];
-			*/
-			
+			cb[3] = Level01Option[3].colors;
+			cb[3].normalColor = LevelGuessData.Selected;
+			cb[3].selectedColor = LevelGuessData.Selected;
+			cb[3].disabledColor = LevelGuessData.Selected;
+			Level01Option[3].colors = cb[3];
+
 			
 			TurnoffButtons();
-			Level02QAnswered = true;
+
 		
-			if(Level02guessdata.isAnswer[3])
+			if(LevelGuessData.isAnswer[3])
 			{
 				CorrectAnswer[3] = true;
 			}
@@ -351,18 +266,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[0].selectedColor = Level01guessdata.Green;
-				cb[0].normalColor = Level01guessdata.Green;
-				cb[0].disabledColor = Level01guessdata.Green;
+				cb[0].selectedColor = LevelGuessData.Green;
+				cb[0].normalColor = LevelGuessData.Green;
+				cb[0].disabledColor = LevelGuessData.Green;
 				Level01Option[0].colors = cb[0];
 				
-				
-				/*
-				Level01cb[0].selectedColor = Level01guessdata.Green;
-				Level01cb[0].normalColor = Level01guessdata.Green;
-				Level01cb[0].disabledColor = Level01guessdata.Green;
-				Level01Option[0].colors = Level01cb[0];
-				*/
 				waittime = 0.0f;
 			}
 
@@ -374,20 +282,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[0] = Level02Option[0].colors;
-				cb[0].selectedColor = Level02guessdata.Green;
-				cb[0].normalColor = Level02guessdata.Green;
-				cb[0].disabledColor = Level02guessdata.Green;
-				Level02Option[0].colors = cb[0];
-				
-				/*
-				Level02cb[0] = Level02Option[0].colors;
-				Level02cb[0].selectedColor = Level02guessdata.Green;
-				Level02cb[0].normalColor = Level02guessdata.Green;
-				Level02cb[0].disabledColor = Level02guessdata.Green;
-				Level02Option[0].colors = Level02cb[0];
-				*/
-				
+				cb[0] = Level01Option[0].colors;
+				cb[0].selectedColor = LevelGuessData.Green;
+				cb[0].normalColor = LevelGuessData.Green;
+				cb[0].disabledColor = LevelGuessData.Green;
+				Level01Option[0].colors = cb[0];
 				
 				waittime = 0.0f;
 			}
@@ -401,17 +300,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[1].selectedColor = Level01guessdata.Green;
-				cb[1].normalColor = Level01guessdata.Green;
-				cb[1].disabledColor = Level01guessdata.Green;
+				cb[1].selectedColor = LevelGuessData.Green;
+				cb[1].normalColor = LevelGuessData.Green;
+				cb[1].disabledColor = LevelGuessData.Green;
 				Level01Option[1].colors = cb[1];
 				
-				/*
-				Level01cb[1].selectedColor = Level01guessdata.Green;
-				Level01cb[1].normalColor = Level01guessdata.Green;
-				Level01cb[1].disabledColor = Level01guessdata.Green;
-				Level01Option[1].colors = Level01cb[1];
-				*/
 				waittime = 0.0f;
 			}
 		}
@@ -422,20 +315,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[1] = Level02Option[1].colors;
-				cb[1].selectedColor = Level02guessdata.Green;
-				cb[1].normalColor = Level02guessdata.Green;
-				cb[1].disabledColor = Level02guessdata.Green;
-				Level02Option[1].colors = cb[1];
-				
-				/*
-				Level02cb[1] = Level02Option[1].colors;
-				Level02cb[1].selectedColor = Level02guessdata.Green;
-				Level02cb[1].normalColor = Level02guessdata.Green;
-				Level02cb[1].disabledColor = Level02guessdata.Green;
-				Level02Option[1].colors = Level02cb[1];
-				*/
-				
+				cb[1] = Level01Option[1].colors;
+				cb[1].selectedColor = LevelGuessData.Green;
+				cb[1].normalColor = LevelGuessData.Green;
+				cb[1].disabledColor = LevelGuessData.Green;
+				Level01Option[1].colors = cb[1];
 				
 				waittime = 0.0f;
 			}
@@ -450,17 +334,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[2].selectedColor = Level01guessdata.Green;
-				cb[2].normalColor = Level01guessdata.Green;
-				cb[2].disabledColor = Level01guessdata.Green;
+				cb[2].selectedColor = LevelGuessData.Green;
+				cb[2].normalColor = LevelGuessData.Green;
+				cb[2].disabledColor = LevelGuessData.Green;
 				Level01Option[2].colors = cb[2];
 				
-				/*
-				Level01cb[2].selectedColor = Level01guessdata.Green;
-				Level01cb[2].normalColor = Level01guessdata.Green;
-				Level01cb[2].disabledColor = Level01guessdata.Green;
-				Level01Option[2].colors = Level01cb[2];
-				*/
 				waittime = 0.0f;
 			}
 			
@@ -473,19 +351,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[2] = Level02Option[2].colors;
-				cb[2].selectedColor = Level02guessdata.Green;
-				cb[2].normalColor = Level02guessdata.Green;
-				cb[2].disabledColor = Level02guessdata.Green;
-				Level02Option[2].colors = cb[2];
-				
-				/*
-				Level02cb[2] = Level02Option[2].colors;
-				Level02cb[2].selectedColor = Level02guessdata.Green;
-				Level02cb[2].normalColor = Level02guessdata.Green;
-				Level02cb[2].disabledColor = Level02guessdata.Green;
-				Level02Option[2].colors = Level02cb[2];
-				*/
+				cb[2] = Level01Option[2].colors;
+				cb[2].selectedColor = LevelGuessData.Green;
+				cb[2].normalColor = LevelGuessData.Green;
+				cb[2].disabledColor = LevelGuessData.Green;
+				Level01Option[2].colors = cb[2];
 				
 				waittime = 0.0f;
 			}
@@ -500,17 +370,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[3].selectedColor = Level01guessdata.Green;
-				cb[3].normalColor = Level01guessdata.Green;
-				cb[3].disabledColor = Level01guessdata.Green;
+				cb[3].selectedColor = LevelGuessData.Green;
+				cb[3].normalColor = LevelGuessData.Green;
+				cb[3].disabledColor = LevelGuessData.Green;
 				Level01Option[3].colors = cb[3];
 				
-				/*
-				Level01cb[3].selectedColor = Level01guessdata.Green;
-				Level01cb[3].normalColor = Level01guessdata.Green;
-				Level01cb[3].disabledColor = Level01guessdata.Green;
-				Level01Option[3].colors = Level01cb[3];
-				*/
 				waittime = 0.0f;
 			}
 			
@@ -522,20 +386,11 @@ public class GuessDisplay : MonoBehaviour
 			
 			if(waittime <= 0.0f)
 			{
-				cb[3] = Level02Option[3].colors;
-				cb[3].selectedColor = Level02guessdata.Green;
-				cb[3].normalColor = Level02guessdata.Green;
-				cb[3].disabledColor = Level02guessdata.Green;
-				Level02Option[3].colors = cb[3];
-				
-				/*
-				Level02cb[3] = Level02Option[3].colors;
-				Level02cb[3].selectedColor = Level02guessdata.Green;
-				Level02cb[3].normalColor = Level02guessdata.Green;
-				Level02cb[3].disabledColor = Level02guessdata.Green;
-				Level02Option[3].colors = Level02cb[3];
-				*/
-				
+				cb[3] = Level01Option[3].colors;
+				cb[3].selectedColor = LevelGuessData.Green;
+				cb[3].normalColor = LevelGuessData.Green;
+				cb[3].disabledColor = LevelGuessData.Green;
+				Level01Option[3].colors = cb[3];
 				
 				waittime = 0.0f;
 			}
@@ -549,13 +404,11 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level01cb[0].selectedColor = Level01guessdata.Red;
-					Level01cb[0].normalColor = Level01guessdata.Red;
-					Level01cb[0].disabledColor = Level01guessdata.Red;
-					Level01Option[0].colors = Level01cb[0];
+					cb[0].selectedColor = LevelGuessData.Red;
+					cb[0].normalColor = LevelGuessData.Red;
+					cb[0].disabledColor = LevelGuessData.Red;
+					Level01Option[0].colors = cb[0];
 					
-					/*
-					*/
 					waittime = 0.0f;
 				}
 			}
@@ -565,10 +418,12 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level02cb[0].selectedColor = Level02guessdata.Red;
-					Level02cb[0].normalColor = Level02guessdata.Red;
-					Level02cb[0].disabledColor = Level02guessdata.Red;
-					Level02Option[0].colors = Level02cb[0];
+					cb[0] = Level01Option[0].colors;
+					cb[0].selectedColor = LevelGuessData.Red;
+					cb[0].normalColor = LevelGuessData.Red;
+					cb[0].disabledColor = LevelGuessData.Red;
+					Level01Option[0].colors = cb[0];
+					
 					waittime = 0.0f;
 				}
 			}
@@ -584,13 +439,11 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level01cb[1].selectedColor = Level01guessdata.Red;
-					Level01cb[1].normalColor = Level01guessdata.Red;
-					Level01cb[1].disabledColor = Level01guessdata.Red;
-					Level01Option[1].colors = Level01cb[1];
-					
-					/*
-					*/
+					cb[1].selectedColor = LevelGuessData.Red;
+					cb[1].normalColor = LevelGuessData.Red;
+					cb[1].disabledColor = LevelGuessData.Red;
+					Level01Option[1].colors = cb[1];
+
 					waittime = 0.0f;
 				}
 			}
@@ -601,10 +454,12 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level02cb[1].selectedColor = Level02guessdata.Red;
-					Level02cb[1].normalColor = Level02guessdata.Red;
-					Level02cb[1].disabledColor = Level02guessdata.Red;
-					Level02Option[1].colors = Level02cb[1];
+					cb[1] = Level01Option[1].colors;
+					cb[1].selectedColor = LevelGuessData.Red;
+					cb[1].normalColor = LevelGuessData.Red;
+					cb[1].disabledColor = LevelGuessData.Red;
+					Level01Option[1].colors = cb[1];
+					
 					waittime = 0.0f;
 				}
 			}
@@ -619,13 +474,12 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level01cb[2].selectedColor = Level01guessdata.Red;
-					Level01cb[2].normalColor = Level01guessdata.Red;
-					Level01cb[2].disabledColor = Level01guessdata.Red;
-					Level01Option[2].colors = Level01cb[2];
 					
-					/*
-					*/
+					cb[2].selectedColor = LevelGuessData.Red;
+					cb[2].normalColor = LevelGuessData.Red;
+					cb[2].disabledColor = LevelGuessData.Red;
+					Level01Option[2].colors = cb[2];
+
 					waittime = 0.0f;
 				}
 			}
@@ -635,10 +489,12 @@ public class GuessDisplay : MonoBehaviour
 			
 				if(waittime <= 0.0f)
 				{
-					Level02cb[2].selectedColor = Level02guessdata.Red;
-					Level02cb[2].normalColor = Level02guessdata.Red;
-					Level02cb[2].disabledColor = Level02guessdata.Red;
-					Level02Option[2].colors = Level02cb[2];
+					cb[2] = Level01Option[2].colors;
+					cb[2].selectedColor = LevelGuessData.Red;
+					cb[2].normalColor = LevelGuessData.Red;
+					cb[2].disabledColor = LevelGuessData.Red;
+					Level01Option[2].colors = cb[2];
+
 					waittime = 0.0f;
 				}
 			}
@@ -647,119 +503,109 @@ public class GuessDisplay : MonoBehaviour
 		
 		if(InCorrectAnswer[3])
 		{
-			if(Lvl ==1)
+			if(Lvl == 1)
 			{
 				waittime -= Time.deltaTime;
 			
 				if(waittime <= 0.0f)
 				{
-					Level01cb[3].selectedColor = Level01guessdata.Red;
-					Level01cb[3].normalColor = Level01guessdata.Red;
-					Level01cb[3].disabledColor = Level01guessdata.Red;
-					Level01Option[3].colors = Level01cb[3];
-					
-					/*
-					*/
+					cb[3].selectedColor = LevelGuessData.Red;
+					cb[3].normalColor = LevelGuessData.Red;
+					cb[3].disabledColor = LevelGuessData.Red;
+					Level01Option[3].colors = cb[3];
+
 					waittime = 0.0f;
 				}
 			}
 			
-			if(Lvl ==2)
+			if(Lvl == 2)
 			{
 				waittime -= Time.deltaTime;
 			
 				if(waittime <= 0.0f)
 				{
-					Level02cb[3].selectedColor = Level02guessdata.Red;
-					Level02cb[3].normalColor = Level02guessdata.Red;
-					Level02cb[3].disabledColor = Level02guessdata.Red;
-					Level02Option[3].colors = Level02cb[3];
+					cb[3] = Level01Option[3].colors;
+					cb[3].selectedColor = LevelGuessData.Red;
+					cb[3].normalColor = LevelGuessData.Red;
+					cb[3].disabledColor = LevelGuessData.Red;
+					Level01Option[3].colors = cb[3];
+
 					waittime = 0.0f;
 				}
 			}
 			
 		}
 		
-		if(Level01QAnswered)
+		if(waittime <= 0.0f && Lvl == 1)
 		{
-			if(Level01Q < Level01Question.Length && Lvl == 1 && waittime == 0.0f)
+			if(Level01Q < guesslogolevel[0].Question.Length)
 			{
 				TransitionTime -= Time.deltaTime;
 			
 				if(TransitionTime <= 0.0f)
 				{
-					
-					if(Lvl == 1)
-					{
-						Level01QAnswered = false;
-						Level01guessdata = Level01Question[Level01Q];
-						LoadNextLevel01Question();
-						TurnOnButtons();
-						Level01Q++;
-					}
-						
+					LevelGuessData = guesslogolevel[0].Question[Level01Q];
+					LoadNextLevel01Question();
+					TurnOnButtons();
+					Level01Q++;			
 				}
 			}
-			else if(Lvl < level.Length && waittime == 0.0f)
+			else if(Lvl < level.Length)
 			{
-				
 				TransitionTime -= Time.deltaTime;
 				
 				if(TransitionTime <= 0.0f)
 				{
-					level[Lvl-1].SetActive(false);
+					TurnOnButtons();
+					Debug.Log("1ok");
 					ResetLevel();
 					Lvl++;
-					level[Lvl-1].SetActive(true);
 				}
-
 			}
 		}
-			
-		if(Level02QAnswered)
+		
+		
+		if(waittime <= 0.0f && Lvl == 2)
 		{
-			if(Level02Q < Level02Question.Length && Lvl == 2 && waittime == 0.0f)
+			if(Level02Q < guesslogolevel[1].Question.Length)
 			{
 				TransitionTime -= Time.deltaTime;
 			
 				if(TransitionTime <= 0.0f)
 				{
-					if(Lvl == 2)
-					{
-						Level02QAnswered = false;
-						Level02guessdata = Level02Question[Level02Q];
-						LoadNextLevel02Question();
-						TurnOnButtons();
-						Level02Q++;
-					}
-
+					LevelGuessData = guesslogolevel[1].Question[Level02Q];
+					LoadNextLevel02Question();
+					TurnOnButtons();
+					Level02Q++;
 				}
 			}
-			else if(Lvl < level.Length && waittime == 0.0f)
+			else if(Lvl < level.Length)
 			{
 				TransitionTime -= Time.deltaTime;
 				
 				if(TransitionTime <= 0.0f)
 				{
-					level[Lvl-1].SetActive(false);
+					TurnOnButtons();
 					ResetLevel();
-					Lvl++;
-					level[Lvl-1].SetActive(true);
+					Debug.Log("2ok");
+					//Lvl++;
 				}
-
 			}
-		}
-			
+		}			
 	}
 	
 	private void TurnoffButtons()
 	{
+		
+		for (int i = 0; i < Level01Option.Length; i++)
+		{
+			Level01Option[i].interactable = false;
+		}
+		
+		/*
 		if(Lvl == 1)
 		{
-			for (int i = 0; i < Level01Option.Length; i++)
-			{
-				Level01Option[i].interactable = false;
-			}
+			
 
 		}
 		
@@ -770,18 +616,23 @@ public class GuessDisplay : MonoBehaviour
 				Level02Option[i].interactable = false;
 			}
 		}
+		*/
 		
 	}
 	
 	private void TurnOnButtons()
 	{
 		
+		for (int i = 0; i < Level01Option.Length; i++)
+		{
+			Level01Option[i].interactable = true;
+		}
+		
+		/*
+		
 		if(Lvl == 1)
 		{
-			for (int i = 0; i < Level01Option.Length; i++)
-			{
-				Level01Option[i].interactable = true;
-			}
+			
 			
 		}
 		
@@ -793,75 +644,57 @@ public class GuessDisplay : MonoBehaviour
 			}
 		}
 		
+		*/
 	}
 	
 	private void ResetLevel()
 	{
 
-		waittime = 2.0f;
+		waittime = 1.0f;
 		TransitionTime = 2.0f;
 		
-		Level01QAnswered = false;
-		Level02QAnswered = false;
-
 		
-		Level02GuessImage.sprite = Level02guessdata.GuessImage;
+		LevelGuessData = guesslogolevel[1].Question[0];
+		
+		Level01GuessImage.sprite = LevelGuessData.GuessImage;
 		
 		for (int i = 0; i < cb.Length; i++)
 		{
 			CorrectAnswer[i] = false;
 			InCorrectAnswer[i] = false;
-			Level02OptionText[i].text = Level02guessdata.OptionText[i];
+			Level01OptionText[i].text = LevelGuessData.OptionText[i];
 			cb[i] = Level02Option[i].colors;
-			cb[i].selectedColor = Level02guessdata.Selected;
-			cb[i].pressedColor = Level02guessdata.Selected;
-			cb[i].normalColor = Level02guessdata.normal;
-			cb[i].disabledColor = Level02guessdata.normal;
-			Level02Option[i].colors = cb[i];
+			cb[i].selectedColor = LevelGuessData.Selected;
+			cb[i].pressedColor = LevelGuessData.Selected;
+			cb[i].normalColor = LevelGuessData.normal;
+			cb[i].disabledColor = LevelGuessData.normal;
+			Level01Option[i].colors = cb[i];
 		}
-		
-		/*
-		for (int i = 0; i < Level02cb.Length; i++)
-		{
-			CorrectAnswer[i] = false;
-			InCorrectAnswer[i] = false;
-			Level02OptionText[i].text = Level02guessdata.OptionText[i];
-			Level02cb[i] = Level02Option[i].colors;
-			Level02cb[i].selectedColor = Level02guessdata.Selected;
-			Level02cb[i].pressedColor = Level02guessdata.Selected;
-			Level02cb[i].normalColor = Level02guessdata.normal;
-			Level02cb[i].disabledColor = Level02guessdata.normal;
-			Level02Option[i].colors = Level02cb[i];
-		}
-		*/
 		
 	}
 	
 	private void LoadNextLevel01Question()
 	{
-		waittime = 2.0f;
+		
+		
+		waittime = 1.0f;
 		TransitionTime = 2.0f;
 		
-		Level01GuessImage.sprite = Level01guessdata.GuessImage;
 		
-		for (int i = 0; i < Level01cb.Length; i++)
+		
+		Level01GuessImage.sprite = LevelGuessData.GuessImage;
+		
+		for (int i = 0; i < cb.Length; i++)
 		{
 			CorrectAnswer[i] = false;
 			InCorrectAnswer[i] = false;
-			Level01OptionText[i].text = Level01guessdata.OptionText[i];
-			
-			cb[i].selectedColor = Level01guessdata.Selected;
-			cb[i].pressedColor = Level01guessdata.Selected;
-			cb[i].normalColor = Level01guessdata.normal;
-			cb[i].disabledColor = Level01guessdata.normal;
+			Level01OptionText[i].text = LevelGuessData.OptionText[i];
+			cb[i].selectedColor = LevelGuessData.Selected;
+			cb[i].pressedColor = LevelGuessData.Selected;
+			cb[i].normalColor = LevelGuessData.normal;
+			cb[i].disabledColor = LevelGuessData.normal;
 			Level01Option[i].colors = cb[i];
-			/*
-			Level01cb[i].selectedColor = Level01guessdata.Selected;
-			Level01cb[i].pressedColor = Level01guessdata.Selected;
-			Level01cb[i].normalColor = Level01guessdata.normal;
-			Level01cb[i].disabledColor = Level01guessdata.normal;
-			Level01Option[i].colors = Level01cb[i];
-			*/
+
 		}
 
 	}
@@ -869,31 +702,23 @@ public class GuessDisplay : MonoBehaviour
 	
 	private void LoadNextLevel02Question()
 	{
-		waittime = 2.0f;
+		waittime = 1.0f;
 		TransitionTime = 2.0f;
 		
-		Level02GuessImage.sprite = Level02guessdata.GuessImage;
+		Level01GuessImage.sprite = LevelGuessData.GuessImage;
 		
-		for (int i = 0; i < Level02cb.Length; i++)
+		for (int i = 0; i < cb.Length; i++)
 		{
 			CorrectAnswer[i] = false;
 			InCorrectAnswer[i] = false;
-			Level02OptionText[i].text = Level02guessdata.OptionText[i];
-			cb[i] = Level02Option[i].colors;
-			cb[i].selectedColor = Level02guessdata.Selected;
-			cb[i].pressedColor = Level02guessdata.Selected;
-			cb[i].normalColor = Level02guessdata.normal;
-			cb[i].disabledColor = Level02guessdata.normal;
-			Level02Option[i].colors = cb[i];
-			
-			/*
-			Level02cb[i] = Level02Option[i].colors;
-			Level02cb[i].selectedColor = Level02guessdata.Selected;
-			Level02cb[i].pressedColor = Level02guessdata.Selected;
-			Level02cb[i].normalColor = Level02guessdata.normal;
-			Level02cb[i].disabledColor = Level02guessdata.normal;
-			Level02Option[i].colors = Level02cb[i];
-			*/
+			Level01OptionText[i].text = LevelGuessData.OptionText[i];
+			cb[i] = Level01Option[i].colors;
+			cb[i].selectedColor = LevelGuessData.Selected;
+			cb[i].pressedColor = LevelGuessData.Selected;
+			cb[i].normalColor = LevelGuessData.normal;
+			cb[i].disabledColor = LevelGuessData.normal;
+			Level01Option[i].colors = cb[i];
+
 		}
 
 
