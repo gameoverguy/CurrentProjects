@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac50d8f6ad29b04a878667ed421c596, type: 3}
+  m_Name: Pack3Vehicles
+  m_EditorClassIdentifier: 
+  Question:
+  - {fileID: 11400000, guid: 9bfa64329b007cd4bb6648a9843876c9, type: 2}
+  - {fileID: 11400000, guid: a8c2f9ae8a1916f47aadc2e237d7cfd5, type: 2}
+  - {fileID: 11400000, guid: 9dea486c399958f449d11eb5fc4d3e15, type: 2}
+  - {fileID: 11400000, guid: 8cfc1b7593da1f74aaefb862a8f19b57, type: 2}
+  - {fileID: 11400000, guid: 1d616c966030414408070e6153ebd24d, type: 2}
+  - {fileID: 11400000, guid: fc26bc88ceeeccf4caa8c6ea595b2b06, type: 2}
+  - {fileID: 11400000, guid: ec7fae45c7a3aa54ab265866afd2dd34, type: 2}
+  - {fileID: 11400000, guid: 9de05882c45a8f448b6d746f6eb9e226, type: 2}
+  - {fileID: 11400000, guid: ff59f4804d80d524196de5ab76552893, type: 2}
+  - {fileID: 11400000, guid: 58edd30750f14ef4d9303d69203a1cb7, type: 2}
+  - {fileID: 11400000, guid: a6ad7bd70ecdde647a4a7bc14ce36258, type: 2}
+  - {fileID: 11400000, guid: ef3cb4841ff12a94e90b46b470f2efb9, type: 2}
+  - {fileID: 11400000, guid: 47c15cfde2ccd2f4085f31d898ebda35, type: 2}
+  - {fileID: 11400000, guid: 074f4f5319aa5bc4eb78097e8fccc676, type: 2}
+  - {fileID: 11400000, guid: f9b9806589f957a449eb0cbaf21bdf51, type: 2}
+  level: 2

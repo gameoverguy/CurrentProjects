@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b711e30d06e8e4c932f5da9b4ff2b3, type: 3}
+  m_Name: Cartoon
+  m_EditorClassIdentifier: 
+  Level:
+  - {fileID: 11400000, guid: c9d90d9268f7fbf4694a78e08bd142c2, type: 2}
+  - {fileID: 11400000, guid: 3e96014d4b8061c49a6a8328c093ae6a, type: 2}
+  - {fileID: 11400000, guid: 440684f90a125004e8e8215c3d5caf71, type: 2}
+  - {fileID: 11400000, guid: 0edce1e6294dc2248aa183fcbe84b46c, type: 2}
+  CategoryNumber: 2

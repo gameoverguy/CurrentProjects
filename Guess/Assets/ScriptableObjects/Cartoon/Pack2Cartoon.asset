@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac50d8f6ad29b04a878667ed421c596, type: 3}
+  m_Name: Pack2Cartoon
+  m_EditorClassIdentifier: 
+  Question:
+  - {fileID: 11400000, guid: b0d392ff34089f44386e4457a5a0a944, type: 2}
+  - {fileID: 11400000, guid: 459bc27928da07a4a85f2ac6228a0d39, type: 2}
+  - {fileID: 11400000, guid: cbcd008a4340ea147b0d13511a0fd101, type: 2}
+  - {fileID: 11400000, guid: 9e5d40b3b8849ae40a7e516f4556bc55, type: 2}
+  - {fileID: 11400000, guid: 2eff17cc3374d984eab4849a32ece971, type: 2}
+  - {fileID: 11400000, guid: f2a4f80eced2ba440ba94e3fb35789d9, type: 2}
+  - {fileID: 11400000, guid: 73645e2f32ae8bc4f977f86856e0637f, type: 2}
+  - {fileID: 11400000, guid: ecadd63bf9080d742b0770da73a3102e, type: 2}
+  - {fileID: 11400000, guid: 2d88343e0333d684da2107800eaff129, type: 2}
+  - {fileID: 11400000, guid: 0b0ba95a971046d44a8057f9ea6314d8, type: 2}
+  - {fileID: 11400000, guid: ddd850f0029813a41a412a1656d2a115, type: 2}
+  - {fileID: 11400000, guid: e558c732bcb59234fb2d4a0bf0a1633d, type: 2}
+  - {fileID: 11400000, guid: 7921b3f1ce90156469c9ef18435efec7, type: 2}
+  - {fileID: 11400000, guid: d6f96b9bae541144ba5323bab9f0e464, type: 2}
+  - {fileID: 11400000, guid: 8bb3c0c5a3048bf4c8e2e745f178374d, type: 2}
+  level: 1

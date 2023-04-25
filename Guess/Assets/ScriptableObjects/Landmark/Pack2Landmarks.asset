@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac50d8f6ad29b04a878667ed421c596, type: 3}
+  m_Name: Pack2Landmarks
+  m_EditorClassIdentifier: 
+  Question:
+  - {fileID: 11400000, guid: 7e036d5e10cc0bb4c806289b2f2c3303, type: 2}
+  - {fileID: 11400000, guid: 6249dc2a15241564192b9880eaf62a44, type: 2}
+  - {fileID: 11400000, guid: 99837d3c99891714ea2887b23d5c3bcb, type: 2}
+  - {fileID: 11400000, guid: ce614657f096de542801a300fe74df29, type: 2}
+  - {fileID: 11400000, guid: f45c3e418b5e5064f944c4c8ee3e5bc7, type: 2}
+  - {fileID: 11400000, guid: 54286abe857c64542a0ecc930bb7ae5b, type: 2}
+  - {fileID: 11400000, guid: 9265803db9fdcb44dba968e7deca30e4, type: 2}
+  - {fileID: 11400000, guid: a70b83b7dedf35842a7e8fc2b6bdace8, type: 2}
+  - {fileID: 11400000, guid: 9dbc8696dc92d40429cd0292027ad74f, type: 2}
+  - {fileID: 11400000, guid: d67f730b05bf8f04f87413b19310f8d6, type: 2}
+  - {fileID: 11400000, guid: 80f15f19e1b08804ea8b086c1e02917a, type: 2}
+  - {fileID: 11400000, guid: 1d9381713c6ba114db29a8b941a16839, type: 2}
+  - {fileID: 11400000, guid: f4af5100ca41edb498f29150e046f9e8, type: 2}
+  - {fileID: 11400000, guid: 7b968e8e5e84e574793be46653fd0944, type: 2}
+  - {fileID: 11400000, guid: ffb5012939ee85c4c9a2573ffdd78319, type: 2}
+  level: 1
